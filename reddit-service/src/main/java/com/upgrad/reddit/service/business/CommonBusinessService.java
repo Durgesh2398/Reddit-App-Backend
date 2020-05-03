@@ -19,12 +19,15 @@ public class CommonBusinessService {
     @Autowired
     private CommonDao commonDao;
 
+
+
     /**
      * The method implements the business logic for userProfile endpoint.
      */
     public UserEntity getUser(String uuid, String authorization) throws UserNotFoundException, AuthorizationFailedException {
 
         UserAuthEntity userAuthEntity = userDao.getUserAuthByAccesstoken(authorization);
-
+        UserEntity userEntity = userAuthEntity.getUser();
+        return userEntity;
     }
 }
