@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c1033fd-a60d-4d6e-a40e-98c8f172c921" name="Default Changelist" comment="" />
+    <list default="true" id="6c1033fd-a60d-4d6e-a40e-98c8f172c921" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/reddit-service/src/main/java/com/upgrad/reddit/service/common/ErrorCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reddit-service/src/main/java/com/upgrad/reddit/service/common/GenericErrorCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reddit-service/src/main/java/com/upgrad/reddit/service/common/JwtTokenProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reddit-service/src/main/java/com/upgrad/reddit/service/common/UnexpectedException.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,6 +107,17 @@
       <updated>1586562274220</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="531" y="254" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1588508260868">
