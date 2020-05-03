@@ -32,7 +32,7 @@ public class PostController  {
 
     @PostMapping("/createPost")
     public ResponseEntity<PostResponse> createPost(@RequestBody PostResponse postRequest,@RequestHeader String authorization)
-            throws AuthorizationFailedException {
+        throws AuthorizationFailedException {
         PostEntity postEntity = new PostEntity();
         postEntity.setContent(postRequest.getStatus());
         PostEntity newPostEntity = postBusinessService.createPost(postEntity,authorization);
@@ -47,10 +47,10 @@ public class PostController  {
      * @return - ResponseEntity<List<PostDetailsResponse>> type object along with Http status OK.
      * @throws AuthorizationFailedException
      */
-
-    @GetMapping("/getAllPosts")
-    public ResponseEntity<List<PostDetailsResponse>> getAllPosts(@RequestHeader String authorization)
-            throws AuthorizationFailedException {
+    
+     @GetMapping("/getAllPosts")
+          public ResponseEntity<List<PostDetailsResponse>> getAllPosts(@RequestHeader String authorization)
+        throws AuthorizationFailedException {
         List<PostEntity> postList = postBusinessService.getPosts(authorization).getResultList();
         List<PostDetailsResponse> postDetailsResponses = new ArrayList<>();
         for(PostEntity postEntity : postList) {
@@ -73,13 +73,13 @@ public class PostController  {
 
     @PostMapping("/editPostContent")
     public ResponseEntity<PostEditResponse> editPostContent(@RequestBody PostEditRequest postEditRequest,@RequestBody String postId,@RequestHeader String authorization)
-            throws AuthorizationFailedException,InvalidPostException {
+        throws AuthorizationFailedException,InvalidPostException {
         PostEntity postEntity = new PostEntity();
         postEntity.setContent(postEditRequest.getContent());
         PostEntity editPostEntity =postBusinessService.editPostContent(postEntity,postId,authorization);
         return new ResponseEntity<>(new PostEditResponse().id(editPostEntity.getUuid()).status(editPostEntity.getContent()),HttpStatus.OK);
-
-    }
+    
+     }
 
     /**
      * A controller method to delete the post in the database.
@@ -93,14 +93,14 @@ public class PostController  {
 
     @PostMapping("/deletePost")
     public ResponseEntity<PostDeleteResponse> deletePost(@RequestBody String postId,@RequestHeader String authorization)
-            throws AuthorizationFailedException,InvalidPostException {
+        throws AuthorizationFailedException,InvalidPostException {
         PostEntity postEntity=postBusinessService.deletePost(postId,authorization);
         return new ResponseEntity<>(new PostDeleteResponse().id(postId),HttpStatus.OK);
-    }
+     }
 
     @GetMapping("/getAllPostsByUser")
     public ResponseEntity<List<PostDetailsResponse>> getAllPostsByUser(@RequestBody String userId,@RequestHeader String authorization)
-            throws AuthorizationFailedException,UserNotFoundException
+    throws AuthorizationFailedException,UserNotFoundException
     {
         List<PostEntity> postEntities=postBusinessService.getPostsByUser(userId,authorization).getResultList();
         List<PostDetailsResponse> postDetailsResponses = new ArrayList<>();

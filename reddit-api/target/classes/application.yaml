@@ -1,6 +1,6 @@
 server:
   servlet:
-    port: 8080
+    port: 3000
     contextPath: /api
 
 spring:
@@ -10,7 +10,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/reddit
     username: postgres
-    password: postgres@123
+    password: admin
     driver-class-name: org.postgresql.Driver
 
   jpa:

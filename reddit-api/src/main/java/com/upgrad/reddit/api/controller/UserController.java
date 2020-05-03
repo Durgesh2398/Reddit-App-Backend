@@ -31,7 +31,7 @@ public class UserController {
      */
     @PostMapping("/signupUser")
     public ResponseEntity<SignupUserResponse> signupUser(@RequestBody SignupUserRequest signupUserRequest)
-            throws SignUpRestrictedException{
+        throws SignUpRestrictedException{
         UserEntity userEntity = new UserEntity();
         userEntity.setAboutMe(signupUserRequest.getAboutMe());
         userEntity.setContactNumber(signupUserRequest.getContactNumber());
@@ -56,15 +56,21 @@ public class UserController {
      */
     @PostMapping("/signin")
     public ResponseEntity<SigninResponse> signin(@RequestBody String username,@RequestBody String password)
-            throws AuthenticationFailedException{
+    throws AuthenticationFailedException{
         UserAuthEntity userAuthEntity =userBusinessService.authenticate(username,password);
         return new ResponseEntity<>(new SigninResponse().id(userAuthEntity.getUuid()),HttpStatus.OK);
     }
 
-
+    /**
+     * A controller method for user signout.
+     *
+     * @param authorization - A field in the request header which contains the JWT token.
+     * @return - ResponseEntity<SignoutResponse> type object along with Http status OK.
+     * @throws SignOutRestrictedException
+     */
     @PostMapping("/signout")
     public ResponseEntity<SignoutResponse> signout(@RequestHeader String authorization)
-            throws SignOutRestrictedException {
+        throws SignOutRestrictedException {
         UserAuthEntity userAuthEntity=userBusinessService.signout(authorization);
         return new ResponseEntity<>(new SignoutResponse().id(userAuthEntity.getUuid()),HttpStatus.OK);
     }

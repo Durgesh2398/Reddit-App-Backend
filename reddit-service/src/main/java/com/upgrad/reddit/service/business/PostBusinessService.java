@@ -64,10 +64,10 @@ public class PostBusinessService {
 
     @Transactional(propagation = Propagation.REQUIRED)
 
-    public PostEntity deletePost(String postId, String authorization) throws AuthorizationFailedException, InvalidPostException {
-        UserAuthEntity userAuthEntity = userDao.getUserAuthByAccesstoken(authorization);
-        PostEntity postEntity=postDao.getPostByUuid(postId);
-        postDao.deletePost(postEntity);
+        public PostEntity deletePost(String postId, String authorization) throws AuthorizationFailedException, InvalidPostException {
+         UserAuthEntity userAuthEntity = userDao.getUserAuthByAccesstoken(authorization);
+           PostEntity postEntity=postDao.getPostByUuid(postId);
+          postDao.deletePost(postEntity);
 
         return postEntity;
     }

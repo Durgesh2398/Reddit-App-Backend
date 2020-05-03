@@ -70,8 +70,8 @@ public class CommentBusinessService {
      * The method implements the business logic for getAllCommentsToPost endpoint.
      */
     public TypedQuery<CommentEntity> getCommentsByPost(String postId, String authorization) throws AuthorizationFailedException, InvalidPostException {
-
-        UserAuthEntity userAuthEntity = userDao.getUserAuthByAccesstoken(authorization);
+        
+      UserAuthEntity userAuthEntity = userDao.getUserAuthByAccesstoken(authorization);
 
         PostEntity postEntity  = commentDao.getPostByUuid(postId);
         return commentDao.getCommentsByPost(postEntity);

@@ -1,4 +1,4 @@
-package com.upgrad.reddit.service.business.common;
+package com.upgrad.reddit.service.common;
 
 public interface ErrorCode {
 

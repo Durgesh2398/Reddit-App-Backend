@@ -1,4 +1,4 @@
-package com.upgrad.reddit.service.business.common;
+package com.upgrad.reddit.service.common;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +15,7 @@ public enum GenericErrorCode implements ErrorCode {
     private static final Map<String, GenericErrorCode> LOOKUP = new HashMap<String, GenericErrorCode>();
 
     static {
-        for (final com.upgrad.reddit.service.common.GenericErrorCode enumeration : com.upgrad.reddit.service.common.GenericErrorCode.values()) {
+        for (final GenericErrorCode enumeration : GenericErrorCode.values()) {
             LOOKUP.put(enumeration.getCode(), enumeration);
         }
     }

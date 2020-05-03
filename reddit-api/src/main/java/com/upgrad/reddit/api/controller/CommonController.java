@@ -28,7 +28,7 @@ public class CommonController {
 
     @GetMapping("/fetchUserDetails")
     public ResponseEntity<UserDetailsResponse> fetchUserDetails(@RequestBody String userId,@RequestHeader String authorization)
-            throws UserNotFoundException,AuthorizationFailedException {
+        throws UserNotFoundException,AuthorizationFailedException {
         UserEntity userEntity = commonBusinessService.getUser(userId,authorization);
         UserDetailsResponse userDetailsResponse = new UserDetailsResponse()
                 .userName(userEntity.getUserName())

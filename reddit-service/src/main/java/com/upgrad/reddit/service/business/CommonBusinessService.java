@@ -19,8 +19,6 @@ public class CommonBusinessService {
     @Autowired
     private CommonDao commonDao;
 
-
-
     /**
      * The method implements the business logic for userProfile endpoint.
      */

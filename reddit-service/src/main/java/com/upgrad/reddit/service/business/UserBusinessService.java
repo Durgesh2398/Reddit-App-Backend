@@ -24,6 +24,9 @@ public class UserBusinessService {
     @Autowired
     private PasswordCryptographyProvider passwordCryptographyProvider;
 
+    /**
+     * The method implements the business logic for signup endpoint.
+     */
     @Transactional(propagation = Propagation.REQUIRED)
     public UserEntity signup(UserEntity userEntity) throws SignUpRestrictedException {
         String[] encryptedText = passwordCryptographyProvider.encrypt(userEntity.getPassword());
@@ -34,6 +37,9 @@ public class UserBusinessService {
     }
 
 
+    /**
+     * The method implements the business logic for signin endpoint.
+     */
     @Transactional(propagation = Propagation.REQUIRED)
     public UserAuthEntity authenticate(String username, String password) throws AuthenticationFailedException {
         UserAuthEntity userAuthEntity = authenticate(username,password);
@@ -41,6 +47,9 @@ public class UserBusinessService {
     }
 
 
+    /**
+     * The method implements the business logic for signout endpoint.
+     */
     @Transactional(propagation = Propagation.REQUIRED)
     public UserAuthEntity signout(String authorization) throws SignOutRestrictedException {
 
