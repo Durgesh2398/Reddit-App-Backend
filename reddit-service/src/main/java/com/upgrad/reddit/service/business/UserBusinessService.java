@@ -24,9 +24,6 @@ public class UserBusinessService {
     @Autowired
     private PasswordCryptographyProvider passwordCryptographyProvider;
 
-    /**
-     * The method implements the business logic for signup endpoint.
-     */
     @Transactional(propagation = Propagation.REQUIRED)
     public UserEntity signup(UserEntity userEntity) throws SignUpRestrictedException {
         String[] encryptedText = passwordCryptographyProvider.encrypt(userEntity.getPassword());

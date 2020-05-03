@@ -26,9 +26,6 @@ public class PostBusinessService {
     private PostDao postDao;
 
 
-    /**
-     * The method implements the business logic for createPost endpoint.
-     */
     @Transactional(propagation = Propagation.REQUIRED)
     public PostEntity createPost(PostEntity postEntity, String authorization) throws AuthorizationFailedException {
 
@@ -37,9 +34,6 @@ public class PostBusinessService {
         return  postEntity;
     }
 
-    /**
-     * The method implements the business logic for getAllPosts endpoint.
-     */
     public TypedQuery<PostEntity> getPosts(String authorization) throws AuthorizationFailedException {
 
         UserAuthEntity userAuthEntity = userDao.getUserAuthByAccesstoken(authorization);
@@ -48,9 +42,7 @@ public class PostBusinessService {
     }
 
 
-    /**
-     * The method implements the business logic for editPostContent endpoint.
-     */
+
     @Transactional(propagation = Propagation.REQUIRED)
     public PostEntity editPostContent(PostEntity postEntity, String postId, String authorization) throws AuthorizationFailedException, InvalidPostException {
         UserAuthEntity userAuthEntity = userDao.getUserAuthByAccesstoken(authorization);
@@ -58,9 +50,7 @@ public class PostBusinessService {
         return postEntity;
     }
 
-    /**
-     * The method implements the business logic for deletePost endpoint.
-     */
+
 
     @Transactional(propagation = Propagation.REQUIRED)
 
@@ -72,9 +62,7 @@ public class PostBusinessService {
         return postEntity;
     }
 
-    /**
-     * The method implements the business logic for getAllPostsByUser endpoint.
-     */
+
     public TypedQuery<PostEntity> getPostsByUser(String userId, String authorization) throws AuthorizationFailedException, UserNotFoundException {
         UserAuthEntity userAuthEntity = userDao.getUserAuthByAccesstoken(authorization);
         PostEntity  postEntity=postDao.getPostByUuid(userId);

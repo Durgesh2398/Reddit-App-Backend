@@ -20,9 +20,6 @@ public class AdminBusinessService {
     @Autowired
     private AdminDao adminDao;
 
-    /**
-     * The method implements the business logic for userDelete endpoint.
-     */
     @Transactional(propagation = Propagation.REQUIRED)
     public UserEntity deleteUser(String authorization, String uuid) throws AuthorizationFailedException, UserNotFoundException {
         UserAuthEntity userAuthEntity = userDao.getUserAuthByAccesstoken(authorization);

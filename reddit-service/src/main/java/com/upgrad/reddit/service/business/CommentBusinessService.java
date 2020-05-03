@@ -26,9 +26,7 @@ public class CommentBusinessService {
     private CommentDao commentDao;
 
 
-    /**
-     * The method implements the business logic for createComment endpoint.
-     */
+
     @Transactional(propagation = Propagation.REQUIRED)
     public CommentEntity createComment(CommentEntity commentEntity, String authorization) throws AuthorizationFailedException {
 
@@ -45,9 +43,7 @@ public class CommentBusinessService {
     }
 
 
-    /**
-     * The method implements the business logic for editCommentContent endpoint.
-     */
+
     @Transactional(propagation = Propagation.REQUIRED)
     public CommentEntity editCommentContent(CommentEntity commentEntity, String commentId, String authorization) throws AuthorizationFailedException, CommentNotFoundException {
         UserAuthEntity userAuthEntity = userDao.getUserAuthByAccesstoken(authorization);
@@ -55,9 +51,7 @@ public class CommentBusinessService {
         return commentEntity;
     }
 
-    /**
-     * The method implements the business logic for deleteComment endpoint.
-     */
+
     @Transactional(propagation = Propagation.REQUIRED)
     public CommentEntity deleteComment(String commentId, String authorization) throws AuthorizationFailedException, CommentNotFoundException {
         UserAuthEntity userAuthEntity = userDao.getUserAuthByAccesstoken(authorization);
@@ -66,9 +60,7 @@ public class CommentBusinessService {
         return commentEntity;
     }
 
-    /**
-     * The method implements the business logic for getAllCommentsToPost endpoint.
-     */
+
     public TypedQuery<CommentEntity> getCommentsByPost(String postId, String authorization) throws AuthorizationFailedException, InvalidPostException {
         
       UserAuthEntity userAuthEntity = userDao.getUserAuthByAccesstoken(authorization);
