@@ -7,16 +7,15 @@ import com.upgrad.reddit.service.exception.AuthorizationFailedException;
 import com.upgrad.reddit.service.exception.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@RestController
 @RequestMapping("/")
 public class CommonController {
 
     @Autowired
     private CommonBusinessService commonBusinessService;
-
     /**
      * A controller method to fetch the details of other user.
      *
@@ -26,4 +25,21 @@ public class CommonController {
      * @throws UserNotFoundException
      * @throws AuthorizationFailedException
      */
+
+    @GetMapping("/fetchUserDetails")
+    public ResponseEntity<UserDetailsResponse> fetchUserDetails(@RequestBody String userId,@RequestHeader String authorization)
+            throws UserNotFoundException,AuthorizationFailedException {
+        UserEntity userEntity = commonBusinessService.getUser(userId,authorization);
+        UserDetailsResponse userDetailsResponse = new UserDetailsResponse()
+                .userName(userEntity.getUserName())
+                .aboutMe(userEntity.getAboutMe())
+                .contactNumber(userEntity.getContactNumber())
+                .country(userEntity.getCountry())
+                .dob(userEntity.getDob())
+                .emailAddress(userEntity.getEmail())
+                .firstName(userEntity.getFirstName())
+                .lastName(userEntity.getLastName());
+
+        return new ResponseEntity<UserDetailsResponse>(userDetailsResponse,HttpStatus.OK);
+    }
 }
