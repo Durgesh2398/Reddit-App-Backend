@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c1033fd-a60d-4d6e-a40e-98c8f172c921" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/reddit-api/src/main/java/com/upgrad/reddit/api/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/reddit-api/src/main/java/com/upgrad/reddit/api/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reddit-service/src/main/java/com/upgrad/reddit/service/business/AdminBusinessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reddit-service/src/main/java/com/upgrad/reddit/service/business/AdminBusinessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reddit-service/src/main/java/com/upgrad/reddit/service/business/CommentBusinessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/reddit-service/src/main/java/com/upgrad/reddit/service/business/CommentBusinessService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,20 +23,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="ProjectId" id="1aN3Yu5mKSQ7LlwDuEnsybQq7Cz" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -98,18 +95,6 @@
         <item itemvalue="Application.RedditApiApplication" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
